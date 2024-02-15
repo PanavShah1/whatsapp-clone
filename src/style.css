@@ -1,0 +1,36 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.text-cont{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.bubble0{
+    background-color: aqua;
+    align-self: end;
+    max-width: 500px;
+    min-width: 100px;
+    width: fit-content;
+    border-radius: 5px;
+    padding: 5px;
+    margin-top: 10px;
+    overflow-wrap: break-word;
+}
+.bubble1{
+    background-color: aquamarine;
+    max-width: 500px;
+    min-width: 100px;
+    width: fit-content;
+    border-radius: 5px;
+    padding: 5px;
+    margin-top: 10px;
+    overflow-wrap: break-word;
+}
+
+.replyText{
+    background-color: white;
+}
