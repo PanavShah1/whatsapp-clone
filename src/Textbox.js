@@ -1,19 +1,21 @@
 import React from "react"
+import sendimg from "./images/sendd.png"
 
 export default function Textbox(props){
 
     return(
-        <div>
+        <div className="textbox-area">
             <textarea
                 type="text"
                 value={props.value}
                 onChange={props.handleChange}
-                placeholder="Enter text here"
+                placeholder="Type a message"
                 // name="text-name"
             />
             <button
+                className="send"
                 onClick={props.handleChangeButton}
-            >Enter</button>
+            ><img src={sendimg} ></img></button>
         </div>
     )
 }

@@ -7,6 +7,9 @@ import TextBox from "./Textbox"
 
 export default function App(){
 
+    const user1 = "Panav"
+    const user2 = "Joe"
+
     const [chat, setChat] = React.useState([])
     const [textBox, setTextBox] = React.useState("")
     const [textBox2, setTextBox2] = React.useState("")
@@ -30,20 +33,20 @@ export default function App(){
 
     function textBoxWrite(event){
         setTextBox(event.target.value)
-        // console.log(0)
     }
 
     function textBoxWrite2(event){
         setTextBox2(event.target.value)
-        // console.log(1)
     }
 
     function submit(){
         console.log("submit")
-        const currentDateTime = new Date().toLocaleString()
+        const hours = new Date().getHours().toLocaleString()>12 ? new Date().getHours().toLocaleString()-12 : new Date().getHours().toLocaleString()
+        const ampm = new Date().getHours().toLocaleString()>12 ? " PM" : " AM"
+        const currentDateTime =hours +":"+new Date().getHours().toLocaleString()+ampm
         setChat((prevChat) => [
             ...prevChat,
-            {user: 0, text:textBox, time:currentDateTime, key:nanoid(), isReply:isReply}
+            {username: user1, user: 0, text:textBox, time:currentDateTime, key:nanoid(), isReply:isReply}
         ])
         console.log("chat " + chat)
         setTextBox("")
@@ -52,10 +55,12 @@ export default function App(){
 
     function submit2(){
         console.log("submit")
-        const currentDateTime = new Date().toLocaleString()
+        const hours = new Date().getHours().toLocaleString()>12 ? new Date().getHours().toLocaleString()-12 : new Date().getHours().toLocaleString()
+        const ampm = new Date().getHours().toLocaleString()>12 ? " PM" : " AM"
+        const currentDateTime =hours +":"+new Date().getHours().toLocaleString()+ampm
         setChat((prevChat) => [
             ...prevChat,
-            {user: 1, text:textBox2, time:currentDateTime, key:nanoid(), isReply:isReply}
+            {username: user2, user: 1, text:textBox2, time:currentDateTime, key:nanoid(), isReply:isReply}
         ])
         console.log("chat " + chat)
         setTextBox2("")
@@ -81,18 +86,19 @@ export default function App(){
 
     return (
         <div>
-            <h1>app</h1>
             <div className="text-cont">{textList}</div>
-            <TextBox 
-                value={textBox} 
-                handleChange={textBoxWrite} 
-                handleChangeButton={submit}
-            />
-            <TextBox 
-                value={textBox2} 
-                handleChange={textBoxWrite2} 
-                handleChangeButton={submit2}
-            />
+                <div className="textbox-cont">
+                    <TextBox 
+                        value={textBox} 
+                        handleChange={textBoxWrite} 
+                        handleChangeButton={submit}
+                    />
+                    <TextBox 
+                        value={textBox2} 
+                        handleChange={textBoxWrite2} 
+                        handleChangeButton={submit2}
+                    />
+            </div>
         </div>
         
     )

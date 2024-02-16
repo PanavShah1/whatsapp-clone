@@ -1,6 +1,17 @@
 *{
     padding: 0;
     margin: 0;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background-image: url("../public/whatsapp-background.jpeg");
+    background-size: 40%;
+}
+
+button:hover{
+    cursor: pointer;
 }
 
 .text-cont{
@@ -10,7 +21,7 @@
 }
 
 .bubble0{
-    background-color: aqua;
+    background-color: rgb(34, 44, 50);
     align-self: end;
     max-width: 500px;
     min-width: 100px;
@@ -21,7 +32,7 @@
     overflow-wrap: break-word;
 }
 .bubble1{
-    background-color: aquamarine;
+    background-color: rgb(34, 44, 50);
     max-width: 500px;
     min-width: 100px;
     width: fit-content;
@@ -31,6 +42,154 @@
     overflow-wrap: break-word;
 }
 
-.replyText{
-    background-color: white;
+.firstline{
+    display: flex;
+    justify-content: space-between;
 }
+
+.textbubble--name{
+    padding: 0px 5px
+}
+
+.bubble0 > .firstline > .textbubble--name{
+    color: rgb(74, 165, 134);
+}
+
+.bubble1 > .firstline > .textbubble--name{
+    color: rgb(255, 111, 0);
+
+}
+
+.textbubble--reply-button{
+    width: 20px;
+    border: none;
+    background-color: transparent;
+}
+
+.textbubble--reply-button > img {
+    background-color: transparent;
+    filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+
+}
+
+.lastline{
+    display: flex;
+    justify-content: space-between;
+}
+
+.textbubble--text{
+    padding: 2px 5px;
+    margin-right: 20px;
+}
+
+.textbubble--time{
+    align-self: flex-end;
+    font-size: 0.75rem;
+    opacity: 0.5;
+}
+
+
+
+
+
+
+.reply0, .reply1{
+    background-color: rgb(30, 39, 45);
+    padding: 5px;
+    margin-top: 5px;
+    position: relative;
+}
+
+.reply0::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background-color: rgba(74, 165, 134, 0.75);
+    margin-right: 10px;
+}
+
+.reply1::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background-color: rgba(255, 111, 0, 0.75);
+    margin-right: 10px;
+}
+
+.reply--name{
+    padding: 0px 5px;
+    font-size: 0.9rem;
+}
+
+.reply0 .reply--name{
+    color: rgba(74, 165, 134, 0.75);
+}
+
+.reply1 .reply--name{
+    color: rgba(255, 111, 0, 0.75);
+}
+
+.reply--lastline{
+    display: flex;
+    justify-content: space-between;
+}
+
+.reply--text{
+    opacity: 0.75;
+    padding: 0px 5px;
+    margin-right: 20px;
+    font-size: 0.9rem;
+}
+
+.reply--time{
+    opacity: 0.5;
+    align-self: flex-end;
+    font-size: 0.7rem ;
+}
+
+
+
+
+.textbox-cont{
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    width: 100%;
+    background-color: rgb(34, 44, 50);
+
+}
+
+.textbox-area{
+    width: 100%;
+    padding: 10px;
+    display: flex;
+
+}
+
+textarea{
+    background-color: rgb(45, 57, 65);
+    width: calc(100% - 58px);
+    padding: 5px 10px;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+
+.send{
+    background-color: transparent;
+    border: none;
+}
+
+.send > img{
+    width: 20px;
+    background-color: transparent;
+    filter: invert(100%);
+}
+
+
+
