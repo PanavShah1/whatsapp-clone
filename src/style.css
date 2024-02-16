@@ -14,10 +14,19 @@ button:hover{
     cursor: pointer;
 }
 
+.cont-cont{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
 .text-cont{
     display: flex;
     flex-direction: column;
     padding: 20px;
+    width: 100%;
+    max-width: 1000px;
+    align-self: center;
 }
 
 .bubble0{

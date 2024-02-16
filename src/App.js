@@ -85,7 +85,7 @@ export default function App(){
     
 
     return (
-        <div>
+        <div className="cont-cont">
             <div className="text-cont">{textList}</div>
                 <div className="textbox-cont">
                     <TextBox 
